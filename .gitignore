@@ -1,0 +1,16 @@
+# Django #
+*.log
+*.pot
+*.pyc
+
+# Backup files #
+*.bak
+
+# PyCharm
+.idea
+
+# pyenv
+.python-version
+
+# others
+temp
