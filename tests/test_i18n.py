@@ -12,8 +12,8 @@ class I18NTest(unittest.TestCase):
         pass
 
     def test_get_i18_text(self):
-        i18n.get_i18_text('测试')
-        i18n.get_i18_text(['测试', '测试1'])
+        print(i18n.get_i18_text('test'))
+        print(i18n.get_i18_text(['test', 'test1']))
 
 
 if __name__ == '__main__':
