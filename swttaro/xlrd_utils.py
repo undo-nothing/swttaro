@@ -9,7 +9,7 @@ class Reader:
     line_num = 0
     rows = []
 
-    def __init__(self, f, *args, **kwargs):
+    def __init__(self, f):
         wk = xlrd.open_workbook(file_contents=f.read())
         assert wk.nsheets == 1, "file sheet shoulb be one"
         sh = wk.sheet_by_index(0)
@@ -47,12 +47,11 @@ class Reader:
 
 class DictReader:
 
-    def __init__(self, f, fieldnames=None, restkey=None, restval=None,
-                 *args, **kwds):
+    def __init__(self, f, fieldnames=None, restkey=None, restval=None):
         self._fieldnames = fieldnames   # list of keys for the dict
         self.restkey = restkey          # key to catch long rows
         self.restval = restval          # default value for short rows
-        self.reader = Reader(f, *args, **kwds)
+        self.reader = Reader(f)
         self.line_num = 0
 
     def __iter__(self):
@@ -75,10 +74,10 @@ class DictReader:
     def __next__(self):
         if self.line_num == 0:
             # Used only for its side effect.
-            self.fieldnames
+            _fieldnames = self.fieldnames
         row = next(self.reader)
         self.line_num = self.reader.line_num
-        while row == []:
+        while not row:
             row = next(self.reader)
         d = OrderedDict(zip(self.fieldnames, row))
         lf = len(self.fieldnames)

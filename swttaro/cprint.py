@@ -12,7 +12,7 @@ STYLES.update(COLORS)
 RESET = '\033[0m'
 
 
-def color(*args, color=None, on_color=None, styles=None, **kwargs):
+def colord(*args, color=None, on_color=None, styles=None, **kwargs):
     """
         color: int: use for format "\033[%sm", str: build-in-map, like 'red', 'green'
         on_color: same to color
@@ -34,44 +34,44 @@ def color(*args, color=None, on_color=None, styles=None, **kwargs):
 
 
 def grey(*args, **kwargs):
-    color(*args, color='grey', **kwargs)
+    colord(*args, color='grey', **kwargs)
 
 
 def red(*args, **kwargs):
-    color(*args, color='red', **kwargs)
+    colord(*args, color='red', **kwargs)
 
 
 def green(*args, **kwargs):
-    color(*args, color='green', **kwargs)
+    colord(*args, color='green', **kwargs)
 
 
 def yellow(*args, **kwargs):
-    color(*args, color='yellow', **kwargs)
+    colord(*args, color='yellow', **kwargs)
 
 
 def blue(*args, **kwargs):
-    color(*args, color='blue', **kwargs)
+    colord(*args, color='blue', **kwargs)
 
 
 def magenta(*args, **kwargs):
-    color(*args, color='magenta', **kwargs)
+    colord(*args, color='magenta', **kwargs)
 
 
 def cyan(*args, **kwargs):
-    color(*args, color='cyan', **kwargs)
+    colord(*args, color='cyan', **kwargs)
 
 
 def white(*args, **kwargs):
-    color(*args, color='white', **kwargs)
+    colord(*args, color='white', **kwargs)
 
 
 def info(*args, **kwargs):
-    color(*args, color='92', **kwargs)
+    colord(*args, color='92', **kwargs)
 
 
 def warning(*args, **kwargs):
-    color(*args, color='93', **kwargs)
+    colord(*args, color='93', **kwargs)
 
 
 def error(*args, **kwargs):
-    color(*args, color='91', **kwargs)
+    colord(*args, color='91', **kwargs)
